@@ -1,6 +1,6 @@
 const { uuid } = require("../utilities/helper")
 
-const BaseController = require("./_BaseController")
+const BaseController = require("../core/_BaseController")
 
 class HelloController extends BaseController {
   helloWorld = async (req, res, next) => {

@@ -1,18 +1,20 @@
 require('dotenv').config()
 
+const express = require("express")
+
+const clog = require("./middlewares/Clog")
+const rest = require("./routes/rest")
+
 // CONFIG
 const PORT = process.env.PORT || 3000
 
 // DEPENDENCIES
-const express = require("express")
 const app = express()
 
 // MIDDLEWARES
-const clog = require("./middlewares/Clog")
 app.use(clog)
 
 // ROUTING
-const rest = require("./routes/rest")
 app.use("/", rest)
 
 // SERVER
